@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESPERO 2023</title>
+  <link rel="icon" type="image/x-icon" href="obcylogo.png"><link rel="icon" type="image/x-icon" href="obcylogo.png">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="your-correct-integrity-value" crossorigin="anonymous" />
+  <style>
+/* Updated styles for Publuu viewer */
+#publuu-viewer {
+  width: auto; /* Increased size to twice its size */
+  height: 420px; /* Increased size to twice its size */
+  position: fixed;
+  top: 50%;
+  left: 100%; /* Start off-screen on the right */
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow effect */
+}
+
+#publuu-viewer:hover {
+  transform: translate(-50%, -50%) scale(1.1); /* Zoom in on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow intensity on hover */
+}
+
+.menu-active #publuu-viewer {
+  opacity: 1;
+  left: 80%; /* Move to the center when active */
+}
+
+.menu-active #publuu-viewer:hover {
+  transform: translate(-50%, -50%) scale(1.1); /* Zoom in on hover when menu is active */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow intensity on hover when menu is active */
+}
+
+
+
+/* Mobile Publu viewer */
+#mobile-publuu-viewer {
+  display: none; /* Hide the mobile Publu viewer by default */
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-active #mobile-publuu-viewer {
+  display: none; /* Hide the mobile Publu viewer when menu is active */
+}
+
+@media only screen and (max-width: 768px) {
+  #publuu-viewer {
+    display: none; /* Hide the larger Publu viewer on mobile */
+  }
+
+  #mobile-publuu-viewer {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block; /* Show the mobile Publu viewer when in mobile view */
+  }
+
+  .menu-active #mobile-publuu-viewer {
+    display: block; /* Show the mobile Publu viewer when menu is active in mobile view */
+  }
+}
+
+
+    /* Adjusted styles for the hamburger menu */
+    .hamburger-menu {
+      height: 4rem;
+      width: 3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .bar {
+      width: 1.9rem;
+      height: 1.5px;
+      border-radius: 2px;
+      background-color: #eee;
+      transition: 0.5s;
+      position: relative;
+    }
+
+    .bar:before,
+    .bar:after {
+      content: "";
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      background-color: #eee;
+      transition: 0.5s;
+    }
+
+    .bar:before {
+      transform: translateY(-9px);
+    }
+
+    .bar:after {
+      transform: translateY(9px);
+    }
+
+    .menu-active .bar {
+      transform: rotate(45deg);
+    }
+
+    .menu-active .bar:before {
+      transform: translateY(0) rotate(45deg);
+    }
+
+    .menu-active .bar:after {
+      transform: translateY(0) rotate(-45deg);
+    }
+
+    /* Styles for the floating window button */
+    #floating-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      border-radius: 10%;
+      padding: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #floating-button i {
+      font-size: 20px;
+    }
+
+
+    #message-popup {
+      display: none;
+      position: fixed;
+      bottom: 70px;
+      left: 20px;
+      background-color: #fff;
+      color: #333;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    @media only screen and (max-width: 768px) {
+  #floating-button {
+    display: flex; /* Hide the larger Publu viewer on mobile */
+  }
+ }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="menu">
+        <h3 class="logo">ESPERO <span>2023</span></h3>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Publuu viewer link and script -->
+    <div id="publuu-viewer">
+      <a href="https://publuu.com/flip-book/335430/771601/page/1?cover" class="show-publuu-viewer" style="width: auto; height: 420px; position: relative; display: inline-block;"><img src="https://p6aqvvqp5i.execute-api.us-east-2.amazonaws.com/images/cover/335430/771601" style="height: 100%;"></a>
+      <script src="https://cms1.publuu.com/js/embed-viewer.js"></script>
+    </div>
+    <!-- Mobile Publu viewer -->
+<div id="mobile-publuu-viewer">
+  <a href="https://publuu.com/flip-book/335430/771601/page/1?cover" class="show-publuu-viewer" style="width: 100%; height: 120px; position: relative; display: inline-block;"><img src="https://p6aqvvqp5i.execute-api.us-east-2.amazonaws.com/images/cover/335430/771601" style="height: 100%;"></a>
+  <script src="https://cms1.publuu.com/js/embed-viewer.js"></script>
+</div>
+
+    <div class="main-container">
+      <div class="main">
+        <header>
+          <div class="overlay">
+            <div class="inner">   
+              <h2 class="title">  </h2>
+              <p>
+                Department of Computer Science and Engineering Presents ESPERO 2023, the second edition of our Prestigious Newsletter!!!
+              </p>
+              <a href="https://publuu.com/flip-book/335430/771601"><button class="btn">Read ESPERO 2023</button></a>
+            </div>
+         
+
+
+      <div class="shadow one"></div>
+      <div class="shadow two"></div>
+    </div>
+
+    <!-- Floating window button and popup -->
+    <button id="floating-button" onclick="toggleMessagePopup()">Warning</button>
+    <div id="message-popup">For Better experience, view it through desktop.</div>
+
+    <script src="app.js"></script>
+    <script>
+      function toggleMenu() {
+        var container = document.querySelector('.container');
+        container.classList.toggle('menu-active');
+      }
+
+      function toggleMessagePopup() {
+        var messagePopup = document.getElementById('message-popup');
+        messagePopup.style.display = (messagePopup.style.display === 'none') ? 'block' : 'none';
+      }
+    </script>
+  </div>
+</body>
+</html>
