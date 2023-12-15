@@ -102,6 +102,20 @@
         transform: translateY(0) rotate(-45deg);
       }
 
+      footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color:rgba(0, 0, 0, 0.25);
+  
+}
+
+footer p {
+  color: #fff;
+  font-weight:200;
+  margin: 0;
+}
 
       #floating-button {
       display: none; /* Initially hide on desktop */
@@ -197,7 +211,9 @@
           <div class="bar"></div>
         </div>
       </div>
-    </div>
+     </div>
+
+  
 
     <!-- Publuu viewer link and script -->
     <div id="publuu-viewer">
@@ -211,11 +227,11 @@
     </div>
 
     <div class="main-container">
-      <div class="main">
+     <div class="main">
         <header>
           <div class="overlay">
             <div class="inner">
-              <h2 class="title"></h2>
+              <h2 class="title">ESPERO 2023 Newsletter</h2>
               <p>
                 Department of Computer Science and Engineering Presents ESPERO 2023, the second edition of our Prestigious Newsletter!!!
               </p>
@@ -226,6 +242,12 @@
           <div class="shadow one"></div>
           <div class="shadow two"></div>
         </header>
+           <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>Espero 2023. All rights reserved.|ARAVIND KRISHNAN K</p>
+    </div>
+  </footer>
       </div>
   
       <!-- Floating window button and popup -->
@@ -236,6 +258,8 @@
           <button onclick="closeMessagePopup()">OK</button>
         </div>
       </div>
+
+ 
   
       <script src="app.js"></script>
 
