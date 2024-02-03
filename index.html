@@ -50,86 +50,84 @@
     .menu-active #mobile-publuu-viewer {
       display: none;
     }
-    
 
-      /* Adjusted styles for the hamburger menu */
-      .hamburger-menu {
-        height: 4rem;
-        width: 3rem;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        position: relative;
-      }
+    /* Adjusted styles for the hamburger menu */
+    .hamburger-menu {
+      height: 4rem;
+      width: 3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+    }
 
-      .bar {
-        width: 1.9rem;
-        height: 1.5px;
-        border-radius: 2px;
-        background-color: #eee;
-        transition: 0.5s;
-        position: relative;
-      }
+    .bar {
+      width: 1.9rem;
+      height: 1.5px;
+      border-radius: 2px;
+      background-color: #eee;
+      transition: 0.5s;
+      position: relative;
+    }
 
-      .bar:before,
-      .bar:after {
-        content: "";
-        position: absolute;
-        width: inherit;
-        height: inherit;
-        background-color: #eee;
-        transition: 0.5s;
-      }
+    .bar:before,
+    .bar:after {
+      content: "";
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      background-color: #eee;
+      transition: 0.5s;
+    }
 
-      .bar:before {
-        transform: translateY(-9px);
-      }
+    .bar:before {
+      transform: translateY(-9px);
+    }
 
-      .bar:after {
-        transform: translateY(9px);
-      }
+    .bar:after {
+      transform: translateY(9px);
+    }
 
-      .menu-active .bar {
-        transform: rotate(45deg);
-      }
+    .menu-active .bar {
+      transform: rotate(45deg);
+    }
 
-      .menu-active .bar:before {
-        transform: translateY(0) rotate(45deg);
-      }
+    .menu-active .bar:before {
+      transform: translateY(0) rotate(45deg);
+    }
 
-      .menu-active .bar:after {
-        transform: translateY(0) rotate(-45deg);
-      }
+    .menu-active .bar:after {
+      transform: translateY(0) rotate(-45deg);
+    }
 
-      footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  background-color:rgba(0, 0, 0, 0.0);
-  
-}
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.0);
+    }
 
-footer p {
-  color: #fff;
-  font-weight:200;
-  margin: 0;
-}
+    footer p {
+      color: #fff;
+      font-weight: 200;
+      margin: 0;
+    }
 
-footer:hover{
-  background-color: rgba(0, 0, 0, 0.1);
-}
+    footer:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
 
-      #floating-button {
+    #floating-button {
       display: none; /* Initially hide on desktop */
-      }
+    }
 
-      #message-popup {
-        display: none; /* Initially hide on desktop */
-      }
-      
-      @media only screen and (max-width: 768px) {
+    #message-popup {
+      display: none; /* Initially hide on desktop */
+    }
+
+    @media only screen and (max-width: 768px) {
       #publuu-viewer {
         display: none;
       }
@@ -142,7 +140,7 @@ footer:hover{
         display: block;
       }
 
-      .hamburger-menu{
+      .hamburger-menu {
         display: none;
       }
 
@@ -172,41 +170,39 @@ footer:hover{
       }
 
       #message-popup {
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 999; /* Higher z-index to ensure it's above other elements */
-      background: rgba(0, 0, 0, 0.5);
-      align-items: center;
-      justify-content: center;
-    }
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999; /* Higher z-index to ensure it's above other elements */
+        background: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+      }
 
-    #message-popup .popup-content {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
+      #message-popup .popup-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
 
-    #message-popup button {
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background-color: #ff0000;
-      color: #fff;
-      border: none;
-      border-radius: 10%;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      #message-popup button {
+        margin-top: 1rem;
+        padding: 0.6rem 1.2rem;
+        background-color: #ff0000;
+        color: #fff;
+        border: none;
+        border-radius: 10%;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
     }
-  }
   </style>
 </head>
 <body>
-
-  
   <div class="container">
     <div class="navbar">
       <div class="menu">
@@ -215,15 +211,14 @@ footer:hover{
           <div class="bar"></div>
         </div>
       </div>
-     </div>
-
-  
+    </div>
 
     <!-- Publuu viewer link and script -->
     <div id="publuu-viewer">
       <a href="https://publuu.com/flip-book/335430/771601/page/1?cover" class="show-publuu-viewer" style="width: auto; height: 420px; position: relative; display: inline-block;"><img src="https://p6aqvvqp5i.execute-api.us-east-2.amazonaws.com/images/cover/335430/771601" style="height: 100%;"></a>
       <script src="https://cms1.publuu.com/js/embed-viewer.js"></script>
     </div>
+
     <!-- Mobile Publu viewer -->
     <div id="mobile-publuu-viewer">
       <a href="https://publuu.com/flip-book/335430/771601/page/1?cover" class="show-publuu-viewer" style="width: 100%; height: 120px; position: relative; display: inline-block;"><img src="https://p6aqvvqp5i.execute-api.us-east-2.amazonaws.com/images/cover/335430/771601" style="height: 100%;"></a>
@@ -231,7 +226,7 @@ footer:hover{
     </div>
 
     <div class="main-container">
-     <div class="main">
+      <div class="main">
         <header>
           <div class="overlay">
             <div class="inner">
@@ -239,19 +234,20 @@ footer:hover{
               <p>
                 Department of Computer Science and Engineering Presents ESPERO 2023, the second edition of our Prestigious Newsletter!!!
               </p>
-              <a href="https://publuu.com/flip-book/335430/771601"><button class="btn">Open ESPERO 2023</button></a>
+              <button class="btn" onclick="openPubluuViewer()">Open ESPERO 2023</button>
             </div>
           </div>
   
           <div class="shadow one"></div>
           <div class="shadow two"></div>
         </header>
-           <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <p>Espero 2023. All rights reserved | ARAVIND KRISHNAN K</p>
-    </div>
-  </footer>
+        
+        <!-- Footer -->
+        <footer>
+          <div class="footer-content">
+            <p> Espero 2023. All rights reserved | ARAVIND KRISHNAN K </p>
+          </div>
+        </footer>
       </div>
   
       <!-- Floating window button and popup -->
@@ -262,12 +258,9 @@ footer:hover{
           <button onclick="closeMessagePopup()">OK</button>
         </div>
       </div>
-
- 
   
       <script src="app.js"></script>
-
-   
     </div>
-  </body>
+  </div>
+</body>
 </html>
